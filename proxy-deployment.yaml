@@ -18,4 +18,4 @@ spec:
       - name: udagram-reverseproxy
         image: ravp90/udagram-reverseproxy:v1
         ports:
-        - containerPort: 85
+        - containerPort: 8080

@@ -18,4 +18,4 @@ spec:
       - name: udagram-frontend
         image: ravp90/udagram-frontend:v2
         ports:
-        - containerPort: 82
+        - containerPort: 8100

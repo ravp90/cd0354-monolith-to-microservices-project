@@ -18,7 +18,7 @@ spec:
       - name: backend-user
         image: ravp90/udagram-api-user:v1
         ports:
-        - containerPort: 81
+        - containerPort: 8080
         imagePullPolicy: Always  
         resources:
           requests:
