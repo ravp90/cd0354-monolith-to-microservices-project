@@ -21,9 +21,30 @@ jobs:
         run: |
           docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
       
+      - name: Build docker image for reverseproxy
+        working-directory: udagram-reverseproxy
+        run: docker build . --file Dockerfile --tag ravp90/udagram-reverseproxy:v1
+      
+      - name: push reverse proxy docker image to dockerhub
+        run: docker push ravp90/udagram-reverseproxy:v1
+      
       - name: Build docker image for api feed
         working-directory: udagram-api-feed
-        run: docker build . --file Dockerfile --tag udagram-api-feed:v1
+        run: docker build . --file Dockerfile --tag ravp90/udagram-api-feed:v1
       
       - name: push api feed docker image to dockerhub
         run: docker push ravp90/udagram-api-feed:v1
+        
+      - name: Build docker image for api user
+        working-directory: udagram-api-user
+        run: docker build . --file Dockerfile --tag ravp90/udagram-api-user:v1
+      
+      - name: push api user docker image to dockerhub
+        run: docker push ravp90/udagram-api-user:v1
+      
+      - name: Build docker image for frontend
+        working-directory: udagram-frontend
+        run: docker build . --file Dockerfile --tag ravp90/udagram-frontend:v1
+      
+      - name: push frontend docker image to dockerhub
+        run: docker push ravp90/udagram-frontend:v1
