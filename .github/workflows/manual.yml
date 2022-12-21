@@ -44,7 +44,7 @@ jobs:
       
       - name: Build docker image for frontend
         working-directory: udagram-frontend
-        run: docker build . --file Dockerfile --tag ravp90/udagram-frontend:v2
+        run: docker build . --file Dockerfile --tag ravp90/udagram-frontend:v3
       
       - name: push frontend docker image to dockerhub
-        run: docker push ravp90/udagram-frontend:v2
+        run: docker push ravp90/udagram-frontend:v3
